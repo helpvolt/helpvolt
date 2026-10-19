@@ -3,21 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HelpVolt - Manutenção Elétrica Industrial em Sorocaba</title>
-<meta name="description" content="HelpVolt - técnico eletrotécnico independente em Sorocaba e região, com mais de 15 anos de experiência em elétrica e automação industrial.">
+<title>HelpVolt | Soluções Avançadas em Elétrica e Automação Industrial</title>
+<meta name="description" content="Suporte técnico especializado, mais de 18 anos de experiência em manutenção industrial, automação, quadros elétricos e adequação NR-12 em Sorocaba e região. Plantão 24h.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.helpvolt.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="HelpVolt">
+<meta property="og:title" content="HelpVolt | Soluções Integradas para Indústria">
+<meta property="og:description" content="Suporte técnico especializado, automação, quadros elétricos e adequação de máquinas em Sorocaba e região.">
+<meta property="og:url" content="https://www.helpvolt.com.br/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="../static/logo-symbol.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --bg: #062d57;
     --panel: #073d6e;
     --text: #f7fbff;
     --muted: #c6d8e7;
-    --amber: #c87532;
+    --amber: #f47700;
     --amber-text: #ffffff;
     --line: rgba(226,239,248,0.18);
     --line-strong: rgba(226,239,248,0.36);
+    --alert-red: #b3261e;
   }
 
   * { box-sizing: border-box; }
@@ -31,16 +45,13 @@
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, .brand, nav a, .btn {
-    font-family: 'Barlow Semi Condensed', sans-serif;
-  }
-
+  h1, h2, h3, .brand, nav a, .btn { font-family: 'Inter', sans-serif; }
   a { color: inherit; }
 
   .wrap {
@@ -49,11 +60,28 @@
     padding: 0 24px;
   }
 
+  /* BARRA DE ALERTA / PLANTÃO */
+  .emergency-topbar {
+    background: var(--alert-red);
+    color: #fff;
+    padding: 7px 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .emergency-topbar a {
+    color: #ffd285;
+    text-decoration: underline;
+    margin-left: 6px;
+  }
+  .emergency-topbar a:hover { color: #fff; }
+
   header.site {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(20,23,26,0.92);
+    background: rgba(6, 45, 87, 0.94);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--line);
   }
@@ -61,38 +89,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
   .brand {
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
   }
-  .brand-mark {
-    width: 22px;
-    height: 22px;
-    fill: var(--amber);
-    flex-shrink: 0;
-  }
-  .brand-logo {
-    width: 52px;
-    height: 52px;
-    object-fit: cover;
-    object-position: center 28%;
-    border-radius: 50%;
-    background: #fff;
-    border: 2px solid var(--amber);
-  }
+  .brand-symbol { width: 44px; height: 44px; flex-shrink: 0; }
   .brand-name {
     display: flex;
     flex-direction: column;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     line-height: 1.1;
   }
   .brand-tag {
-    font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
     font-size: 0.72rem;
     color: var(--muted);
@@ -100,10 +114,10 @@
   nav.links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
   }
   nav.links a.section-link {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--muted);
     text-decoration: none;
@@ -118,22 +132,19 @@
   .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     padding: 11px 20px;
     text-decoration: none;
     border: 1.5px solid transparent;
     cursor: pointer;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: background 0.2s, border-color 0.2s, transform 0.1s;
   }
-  .btn-primary {
-    background: var(--amber);
-    color: var(--amber-text);
-  }
-  .btn-primary:hover, .btn-primary:focus-visible {
-    background: #f5b85c;
-  }
+  .btn-primary { background: var(--amber); color: var(--amber-text); }
+  .btn-primary:hover, .btn-primary:focus-visible { background: #e06d00; }
   .btn-outline {
     background: transparent;
     color: var(--text);
@@ -144,238 +155,189 @@
     border-color: var(--amber);
     color: var(--amber);
   }
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--amber);
-    outline-offset: 3px;
-  }
 
   .hero {
     position: relative;
     overflow: hidden;
-    padding: 88px 0 76px;
+    padding: 72px 0 68px;
     border-bottom: 1px solid var(--line);
   }
-  .hero-trace {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .hero .wrap {
-    position: relative;
-    z-index: 1;
-  }
+  .hero-trace { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .hero .wrap { position: relative; z-index: 1; }
   .hero-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(230px, 360px);
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 460px);
     gap: 48px;
     align-items: center;
   }
-  .hero-logo {
-    width: 100%;
-    max-width: 360px;
-    justify-self: end;
-    border-radius: 50%;
-    background: #fff;
-    border: 7px solid rgba(240,168,64,0.9);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+  .hero-photo { 
+    width: 100%; 
+    height: 380px; 
+    justify-self: end; 
+    object-fit: cover; 
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.35);
   }
-  .hero-content {
-    max-width: 620px;
-    animation: rise 0.7s ease-out both;
-  }
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  h1 {
-    font-size: clamp(2.1rem, 4.4vw, 3.2rem);
-    font-weight: 700;
-    line-height: 1.12;
-    margin: 0 0 20px;
-    letter-spacing: -0.01em;
-  }
-  .lede {
-    font-size: 1.08rem;
-    color: var(--muted);
-    max-width: 46ch;
-    margin: 0 0 32px;
-  }
-  .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 40px;
-  }
-  .principle-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 0 0 28px;
-  }
-  .principle-strip span {
-    padding: 8px 13px;
-    border-left: 3px solid var(--amber);
-    background: rgba(255,255,255,0.08);
-    color: var(--text);
-    font-size: 0.88rem;
-    font-weight: 600;
-  }
-  .tag-strip {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .tag-strip span {
-    font-size: 0.92rem;
-    color: var(--muted);
-    padding: 0 18px;
-    border-left: 1px solid var(--line-strong);
-  }
-  .tag-strip span:first-child {
-    padding-left: 0;
-    border-left: none;
-  }
+  .hero-content { max-width: 650px; animation: rise 0.7s ease-out both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  
+  h1 { font-size: clamp(2.1rem, 4.2vw, 3.1rem); font-weight: 700; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.01em; }
+  .lede { font-size: 1.08rem; color: var(--muted); max-width: 52ch; margin: 0 0 30px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
+  
+  .tag-strip { display: flex; flex-wrap: wrap; margin-top: 24px; gap: 6px 0; }
+  .tag-strip span { font-size: 0.9rem; font-weight: 500; color: var(--muted); padding: 0 16px; border-left: 1px solid var(--line-strong); }
+  .tag-strip span:first-child { padding-left: 0; border-left: none; }
 
   section { padding: 72px 0; }
-  h2 {
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
-    font-weight: 700;
-    margin: 0 0 36px;
-  }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; margin: 0 0 36px; }
 
-  .service-row {
-    display: grid;
-    grid-template-columns: minmax(200px, 320px) 1fr;
-    gap: 24px;
-    padding: 22px 0;
-    border-top: 1px solid var(--line);
-  }
-  .services-list .service-row:last-child {
-    border-bottom: 1px solid var(--line);
-  }
-  .proposal { background:#f4f8fb; color:#102133; }
-  .proposal h2 { color:var(--bg); }
-  .proposal-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(270px,430px); gap:48px; align-items:center; }
-  .proposal p { color:#586b7c; max-width:58ch; }
-  .proposal-list { padding:0; margin:24px 0 0; list-style:none; }
-  .proposal-list li { position:relative; padding:10px 0 10px 28px; border-top:1px solid #d4e0e8; font-weight:600; }
-  .proposal-list li::before { content:"✓"; position:absolute; left:0; color:var(--amber); font-weight:800; }
-  .proposal-art { width:100%; display:block; border:1px solid #ccdbe5; box-shadow:12px 14px 0 rgba(6,45,87,.12); }
-  .service-row h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 0;
-  }
-  .service-row p {
-    margin: 0;
+  /* CATÁLOGO DE SOLUÇÕES */
+  .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .catalog-card { background: rgba(255,255,255,0.035); border: 1px solid var(--line); padding: 26px; border-top: 3px solid var(--amber); transition: background 0.2s, transform 0.2s; position: relative; }
+  .catalog-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-3px); }
+  .catalog-card h3 { margin: 0 0 10px; font-size: 1.18rem; }
+  .catalog-card h3 a { color: var(--text); text-decoration: none; }
+  .catalog-card h3 a::after { content: ''; position: absolute; inset: 0; }
+  .catalog-card p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+
+  /* METODOLOGIA */
+  .process { background: #f4f8fb; color: #102133; }
+  .process h2 { color: var(--bg); margin-bottom: 12px; }
+  .process-intro { color: #586b7c; max-width: 62ch; margin: 0 0 28px; }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .process-step { padding: 20px; border-top: 3px solid var(--amber); background: white; }
+  .process-step b { display: block; color: var(--amber); font-size: 1.2rem; }
+  .process-step h3 { margin: 8px 0; color: var(--bg); font-size: 1.1rem; }
+  .process-step p { margin: 0; color: #586b7c; font-size: 0.92rem; }
+
+  /* EMPRESAS ATENDIDAS */
+  .trust-band { background: var(--panel); padding: 44px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; }
+  .trust-band p { margin: 0 0 8px; color: var(--amber); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+  .trust-client { font-size: 1.55rem; font-weight: 700; color: var(--text); margin: 0; }
+  .trust-scope { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
+
+  /* SOBRE */
+  .about-grid { display: grid; grid-template-columns: minmax(220px, 360px) 1fr; gap: 52px; align-items: center; }
+  .about p { max-width: 62ch; color: var(--muted); font-size: 1.05rem; }
+  .about-panel-photo { width: 100%; display: block; border: 5px solid var(--amber); box-shadow: 14px 14px 0 rgba(244,119,0,0.22); }
+  .difference-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 30px; }
+  .difference { padding: 18px; border-top: 3px solid var(--amber); background: rgba(7,61,110,0.48); }
+  .difference strong { display: block; color: var(--text); font-size: 1.05rem; margin-bottom: 5px; }
+  .difference span { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+
+  /* PROJETOS FOTORREALISTAS */
+  .proposal { background: #f4f8fb; color: #102133; padding-bottom: 84px; }
+  .proposal h2 { color: var(--bg); }
+  .proposal-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, 450px); gap: 48px; align-items: center; }
+  .proposal p { color: #586b7c; max-width: 58ch; font-size: 1.05rem; }
+  .proposal-list { padding: 0; margin: 24px 0 0; list-style: none; }
+  .proposal-list li { position: relative; padding: 10px 0 10px 28px; border-top: 1px solid #d4e0e8; font-weight: 600; }
+  .proposal-list li::before { content: "✓"; position: absolute; left: 0; color: var(--amber); font-weight: 800; }
+  .proposal-art { width: 100%; display: block; border: 1px solid #ccdbe5; box-shadow: 12px 14px 0 rgba(6,45,87,0.12); }
+
+  /* CONTATO */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-top: 8px; }
+  .contact-item { display: flex; flex-direction: column; }
+  .contact-item .label { display: flex; align-items: center; font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; }
+  .contact-item .label svg { margin-right: 6px; color: var(--amber); }
+  .contact-item .value { font-size: 1.22rem; font-weight: 600; text-decoration: none; }
+  .contact-item a.value:hover { color: var(--amber); }
+  
+  /* LAYOUT DO FORMULÁRIO E MAPA */
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; align-items: stretch; }
+  .contact-form { padding: 28px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-top: 3px solid var(--amber); display: flex; flex-direction: column; }
+  .contact-map { border: 1px solid var(--line); border-top: 3px solid var(--amber); background: rgba(255,255,255,0.05); min-height: 360px; display: flex; }
+  .contact-map iframe { width: 100%; height: 100%; border: 0; }
+  
+  .contact-form h3 { margin: 0; font-size: 1.35rem; }
+  .contact-form p { margin: 4px 0 20px; color: var(--muted); font-size: 0.92rem; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; flex-grow: 1; }
+  .form-grid label { display: grid; gap: 5px; color: var(--muted); font-weight: 600; font-size: 0.88rem; align-content: start; }
+  .form-grid input, .form-grid textarea { width: 100%; padding: 11px 12px; border: 1px solid #7891a5; border-radius: 2px; background: #fff; color: #102133; font: inherit; }
+  .form-grid textarea { height: 100%; min-height: 120px; resize: vertical; }
+  .form-message { grid-column: 1 / -1; display: flex; flex-direction: column; }
+  .contact-form button { margin: 18px 0 0; align-self: flex-start; }
+  
+  /* POLO REGIONAL */
+  .region-strip {
+    margin-top: 36px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--amber);
+    background: rgba(255,255,255,0.035);
+    font-size: 0.92rem;
     color: var(--muted);
-    max-width: 52ch;
   }
+  .region-strip strong { color: var(--text); }
 
-  .band {
-    background: var(--panel);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+  /* FOOTER & FLOATING */
+  footer { border-top: 1px solid var(--line); padding: 36px 0; }
+  .footer-logo-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .footer-logo-wrap img { opacity: 0.4; filter: grayscale(100%); width: 26px; height: 26px; }
+  footer p { color: var(--muted); font-size: 0.88rem; margin: 0; }
+  .footer-details { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 8px; }
+  .service-kicker { color: var(--amber); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; display: block; }
+  
+  .floating-whatsapp { 
+    position: fixed; 
+    right: 22px; 
+    bottom: 22px; 
+    z-index: 20; 
+    display: flex; 
+    align-items: center; 
+    gap: 9px; 
+    padding: 13px 18px; 
+    border-radius: 999px; 
+    background: #20a753; 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 0.92rem; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.36); 
+    transition: transform 0.2s, background 0.2s;
   }
-  .band-inner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 28px;
+  .floating-whatsapp:hover { 
+    background: #168640; 
+    transform: translateY(-2px);
   }
-  .band h2 { margin-bottom: 12px; }
-  .band p {
-    color: var(--muted);
-    max-width: 54ch;
-    margin: 0;
-  }
-  .band-text { max-width: 640px; }
+  .floating-whatsapp svg { width: 20px; height: 20px; fill: currentColor; }
 
-  .about p {
-    max-width: 62ch;
-    color: var(--muted);
-    font-size: 1.05rem;
+  @media (max-width: 960px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-map { min-height: 300px; }
   }
-  .about-grid { display:grid; grid-template-columns:minmax(220px,360px) 1fr; gap:52px; align-items:center; }
-  .about-panel-photo { width:100%; display:block; border:5px solid var(--amber); box-shadow:14px 14px 0 rgba(240,168,64,.22); }
-  .difference-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px; }
-  .difference { padding:18px; border-top:3px solid var(--amber); background:rgba(7,61,110,.48); }
-  .difference strong { display:block; color:var(--text); font-family:'Barlow Semi Condensed',sans-serif; font-size:1.18rem; margin-bottom:5px; }
-  .difference span { color:var(--muted); font-size:.8rem; line-height:1.4; }
-  .contact-item .value.email { font-size: 1.05rem; overflow-wrap: anywhere; }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
-    margin-top: 8px;
-  }
-  .contact-item .label {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-  .contact-item .value {
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .contact-item a.value:hover, .contact-item a.value:focus-visible {
-    color: var(--amber);
-  }
-  .contact-actions {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-  }
-
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 28px 0;
-  }
-  footer p {
-    color: var(--muted);
-    font-size: 0.88rem;
-    margin: 0;
-  }
-  .footer-details { display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:8px; }
-  .floating-whatsapp { position:fixed; right:22px; bottom:22px; z-index:20; display:flex; align-items:center; gap:9px; padding:13px 17px; border-radius:999px; background:#20a753; color:#fff; text-decoration:none; font-weight:700; font-size:.9rem; box-shadow:0 8px 24px rgba(0,0,0,.32); }
-  .floating-whatsapp:hover, .floating-whatsapp:focus-visible { background:#168640; color:#fff; }
-  .floating-whatsapp svg { width:20px; height:20px; fill:currentColor; }
-
-  @media (max-width: 720px) {
+  @media (max-width: 760px) {
+    nav.links { gap: 10px; }
     nav.links a.section-link { display: none; }
-    .service-row {
-      grid-template-columns: 1fr;
-      gap: 6px;
-    }
-    .band-inner { flex-direction: column; align-items: flex-start; }
-    .cta-row { flex-direction: column; align-items: flex-start; }
     .hero-layout { grid-template-columns: 1fr; gap: 34px; }
-    .hero-logo { justify-self: start; max-width: 250px; }
-  }
-  @media (max-width: 720px) {
-    .about-grid, .proposal-grid { grid-template-columns: 1fr; gap: 32px; }
-    .about-panel-photo { max-width: 330px; }
+    .hero-photo { height: 280px; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .about-grid, .proposal-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
+<!-- BARRA DE PLANTÃO INDUSTRIAL 24H -->
+<div class="emergency-topbar">
+  <span>🚨 <strong>Linha parada ou falha elétrica na fábrica?</strong> Plantão emergencial 24h em Sorocaba e região.</span>
+  <a href="https://wa.me/5515997357972?text=Ol%C3%A1%20Daniel,%20estou%20com%20uma%20parada%20emergencial%20na%20f%C3%A1brica%20e%20preciso%20de%20suporte%20imediato." target="_blank" rel="noopener">Falar com Plantonista Técnico &rarr;</a>
+</div>
+
 <header class="site">
   <div class="wrap">
-    <div class="brand">
-      <img class="brand-logo" src="/static/logo.png" alt="Logo HelpVolt">
+    <a href="index.html" class="brand">
+      <img class="brand-symbol" src="../static/logo-symbol.png" alt="HelpVolt Logo">
       <span class="brand-name">HelpVolt<span class="brand-tag">Elétrica e Automação Industrial</span></span>
-    </div>
-    <nav class="links">
-      <a class="section-link" href="#servicos">Serviços</a>
-      <a class="section-link" href="#propostas">Propostas visuais</a>
+    </a>
+    <nav class="links" aria-label="Navegação principal">
+      <a class="section-link" href="#catalogo">Soluções</a>
+      <a class="section-link" href="#metodo">Metodologia</a>
+      <a class="section-link" href="#clientes">Clientes</a>
       <a class="section-link" href="#contato">Contato</a>
-      <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20encontrei%20a%20HelpVolt%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20HelpVolt%20e%20gostaria%20de%20solicitar%20suporte%20t%C3%A9cnico." target="_blank" rel="noopener">Suporte WhatsApp</a>
     </nav>
   </div>
 </header>
@@ -393,164 +355,275 @@
   </svg>
   <div class="wrap hero-layout">
     <div class="hero-content">
-      <h1>Manutenção elétrica industrial que mantém sua linha rodando.</h1>
-      <p class="lede">Técnico eletrotécnico independente em Sorocaba, com mais de 15 anos de experiência, especializado em painéis de força e controle, CLPs, inversores de frequência e motores. Atendimento direto, sem intermediários.</p>
+      <span class="service-kicker">Suporte Técnico Industrial · Sorocaba e Região</span>
+      <h1>Soluções integradas em elétrica e automação industrial.</h1>
+      <p class="lede">A HelpVolt fornece excelência em serviços técnicos, manutenção de máquinas e adequação às normas vigentes, garantindo a continuidade operacional e a segurança da sua indústria.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20encontrei%20a%20HelpVolt%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
-        <a class="btn btn-outline" href="mailto:helpvolt@gmail.com">Enviar e-mail</a>
-      </div>
-      <div class="principle-strip" aria-label="Princípios da HelpVolt">
-        <span>Segurança em cada instalação</span>
-        <span>Qualidade em cada serviço</span>
+        <a class="btn btn-primary" href="#contato">Solicitar Avaliação Técnica</a>
+        <a class="btn btn-outline" href="#catalogo">Ver Soluções</a>
       </div>
       <div class="tag-strip">
-        <span>Painéis elétricos</span>
-        <span>CLPs Siemens, Delta e outros</span>
-        <span>Inversores de frequência e softstarters</span>
+        <span>Mais de 18 Anos de Experiência</span>
+        <span>Emissão de TRT (Registro Técnico)</span>
+        <span>Normas NR-10, NR-12 e NR-35</span>
       </div>
     </div>
-    <img class="hero-logo" src="/static/logo.png" alt="HelpVolt — Elétrica e Automação Industrial">
+    
+    <img class="hero-photo" src="../static/painel-industrial-ilustrativo.png" alt="Técnico realizando manutenção em painel elétrico industrial" fetchpriority="high" decoding="async">
   </div>
 </section>
 
-<section id="servicos">
+<!-- CATÁLOGO DE SOLUÇÕES -->
+<section id="catalogo">
   <div class="wrap">
-    <h2>Serviços</h2>
-    <div class="services-list">
-      
-      <!-- 1. Projetos, Painéis e Modernização -->
-      <div class="service-row">
-        <h3>Painéis elétricos industriais</h3>
-        <p>Projeto, montagem e manutenção de quadros de comando.</p>
-      </div>
-      <div class="service-row">
-        <h3>Banco de capacitores</h3>
-        <p>Projeto, montagem e instalação para correção do fator de potência da sua indústria.</p>
-      </div>
-      <div class="service-row">
-        <h3>Retrofit de máquinas</h3>
-        <p>Modernização elétrica e de automação para melhorar a segurança, a confiabilidade e o desempenho do equipamento.</p>
-      </div>
-
-      <!-- 2. Automação e Acionamentos -->
-      <div class="service-row">
-        <h3>CLPs Siemens, Delta e outros</h3>
-        <p>Programação, parametrização e manutenção.</p>
-      </div>
-      <div class="service-row">
-        <h3>Inversores de frequência</h3>
-        <p>Instalação, configuração e diagnóstico.</p>
-      </div>
-      <div class="service-row">
-        <h3>Softstarters</h3>
-        <p>Instalação e manutenção.</p>
-      </div>
-
-      <!-- 3. Equipamentos e Máquinas -->
-      <div class="service-row">
-        <h3>Motores elétricos</h3>
-        <p>Diagnóstico e manutenção.</p>
-      </div>
-      <div class="service-row">
-        <h3>Pontes rolantes</h3>
-        <p>Manutenção elétrica.</p>
-      </div>
-
-      <!-- 4. Segurança e Preventiva -->
-      <div class="service-row">
-        <h3>Adequação elétrica à NR-12</h3>
-        <p>Melhorias e adequações elétricas para mais segurança nas máquinas e processos.</p>
-      </div>
-      <div class="service-row">
-        <h3>Termografia</h3>
-        <p>Inspeção termográfica para identificar pontos de aquecimento antes que virem falhas.</p>
-      </div>
-      <div class="service-row">
-        <h3>Inspeção com megômetro</h3>
-        <p>Avaliação do isolamento elétrico de motores, cabos e equipamentos.</p>
-      </div>
-
+    <h2>Catálogo de Soluções</h2>
+    <div class="catalog-grid">
+      <article class="catalog-card">
+        <h3><a href="#contato" title="Solicitar orçamento para Quadros e CCMs">Quadros e CCMs</a></h3>
+        <p>Projetos, montagem, comissionamento e retrofit de painéis de força e controle industriais.</p>
+      </article>
+      <article class="catalog-card">
+        <h3><a href="#contato" title="Solicitar orçamento para Automação e CLPs">Automação e CLPs</a></h3>
+        <p>Desenvolvimento de lógicas, parametrização e manutenção em sistemas Siemens, Delta e outros.</p>
+      </article>
+      <article class="catalog-card">
+        <h3><a href="#contato" title="Solicitar orçamento para Acionamentos">Acionamentos</a></h3>
+        <p>Instalação e diagnóstico avançado em inversores de frequência e softstarters.</p>
+      </article>
+      <article class="catalog-card">
+        <h3><a href="#contato" title="Solicitar inspeção de Termografia Industrial">Termografia Industrial</a></h3>
+        <p>Inspeção preditiva para detecção de anomalias térmicas, evitando paradas não programadas.</p>
+      </article>
+      <article class="catalog-card">
+        <h3><a href="#contato" title="Solicitar projeto de Adequação NR-12">Adequação NR-12</a></h3>
+        <p>Implementação de sistemas de segurança em máquinas, garantindo conformidade e proteção.</p>
+      </article>
+      <article class="catalog-card">
+        <h3><a href="#contato" title="Solicitar Manutenção de Plantas">Manutenção de Plantas</a></h3>
+        <p>Suporte corretivo e preventivo para toda a infraestrutura elétrica da sua unidade fabril.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="proposal" id="propostas">
-  <div class="wrap proposal-grid">
-    <div>
-      <h2>Projetos de painéis elétricos com modelos fotorrealistas.</h2>
-      <p>Um diferencial da HelpVolt: sua proposta pode incluir um modelo visual fotorrealista do painel elétrico. Antes da montagem, você entende como será a solução, quais componentes farão parte do conjunto e o que receberá na sua instalação.</p>
-      <ul class="proposal-list">
-        <li>Projeto de painel elétrico apresentado de forma visual e detalhada</li>
-        <li>Mais segurança e clareza antes de aprovar o serviço</li>
-        <li>Você sabe o que vai receber na sua instalação</li>
-      </ul>
+<!-- METODOLOGIA DE TRABALHO -->
+<section class="process" id="metodo">
+  <div class="wrap">
+    <h2>Metodologia Técnica</h2>
+    <p class="process-intro">Garantimos um fluxo de trabalho estruturado, desde a identificação da anomalia até a entrega da solução com documentação apropriada.</p>
+    <div class="process-grid">
+      <article class="process-step"><b>01</b><h3>Inspeção</h3><p>Análise detalhada e medições em campo.</p></article>
+      <article class="process-step"><b>02</b><h3>Diagnóstico</h3><p>Identificação da causa-raiz e plano de intervenção.</p></article>
+      <article class="process-step"><b>03</b><h3>Execução</h3><p>Implementação das correções com padrão industrial.</p></article>
+      <article class="process-step"><b>04</b><h3>Validação</h3><p>Testes, comissionamento e entrega operacional.</p></article>
     </div>
-    <img class="proposal-art" src="/static/modelo-proposta-helpvolt.jpg" alt="Exemplo ilustrativo de proposta visual HelpVolt para painel elétrico">
   </div>
 </section>
 
-<section class="band">
-  <div class="wrap band-inner">
-    <div class="band-text">
-      <h2>Contratos de manutenção preventiva</h2>
-      <p>Visitas programadas para revisar painéis, CLPs e inversores antes que virem parada não planejada. Para quem não pode parar a produção sem aviso.</p>
-    </div>
-    <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20um%20contrato%20de%20manuten%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar sobre um contrato</a>
+<!-- EMPRESAS ATENDIDAS -->
+<section class="trust-band" id="clientes">
+  <div class="wrap">
+    <p>Empresas que confiam no suporte da HelpVolt</p>
+    <h3 class="trust-client">Mettalica Caldeiraria Pesada</h3>
+    <span class="trust-scope">Manutenção técnica em pontes rolantes, automação e infraestrutura de painéis elétricos industriais.</span>
   </div>
 </section>
 
+<!-- SOBRE A EMPRESA -->
 <section class="about">
   <div class="wrap">
     <div class="about-grid">
-      <img class="about-panel-photo" src="/static/painel-industrial-ilustrativo.png" alt="Painel elétrico industrial organizado — imagem ilustrativa">
+      <img class="about-panel-photo" src="../static/painel-industrial-ilustrativo.png" alt="Painel elétrico industrial organizado" loading="lazy" decoding="async">
       <div>
-        <h2>Sobre a HelpVolt</h2>
-        <p>Sou o Daniel por trás da HelpVolt: técnico eletrotécnico independente (MEI) em Sorocaba e região, com experiência em manutenção elétrica industrial. Atendimento direto: você fala comigo, não com uma central de atendimento.</p>
+        <h2>A HelpVolt</h2>
+        <p>Com sólida base operacional e foco na resolução ágil de problemas, a HelpVolt atua como o parceiro técnico em elétrica e automação para indústrias que exigem alto nível de confiabilidade e resposta rápida.</p>
         <div class="difference-grid">
-          <div class="difference"><strong>Atendimento direto</strong><span>Você fala com o técnico responsável pelo serviço.</span></div>
-          <div class="difference"><strong>Orçamento rápido</strong><span>Retorno ágil para apoiar a decisão da sua operação.</span></div>
-          <div class="difference"><strong>Automação industrial</strong><span>Experiência em painéis, CLPs, inversores e redes.</span></div>
-          <div class="difference"><strong>Sorocaba e região</strong><span>Atendimento para indústrias em Sorocaba e cidades próximas.</span></div>
+          <div class="difference"><strong>Know-how Técnico</strong><span>Mais de 18 anos de vivência contínua no chão de fábrica.</span></div>
+          <div class="difference"><strong>Plantas Industriais</strong><span>Gestão completa de painéis, máquinas e infraestrutura.</span></div>
+          <div class="difference"><strong>Resposta Regional</strong><span>Atuação estratégica focada em Sorocaba e polo industrial.</span></div>
+          <div class="difference"><strong>Foco em Performance</strong><span>Redução comprovada de paradas (downtime) e custos.</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PROJETOS FOTORREALISTAS -->
+<section class="proposal" id="projetos-3d">
+  <div class="wrap proposal-grid">
+    <div>
+      <span class="service-kicker">Projetos & Painéis Elétricos</span>
+      <h2>Aprovação guiada por modelos fotorrealistas em 3D.</h2>
+      <p>Elevamos o padrão de planejamento da sua indústria. Antes de qualquer corte ou montagem, entregamos o gêmeo digital fotorrealista do seu painel elétrico.</p>
+      <ul class="proposal-list">
+        <li>Antecipação exata de layout, canaletas e distribuição de carga</li>
+        <li>Eliminação completa de erros de montagem e retrabalhos</li>
+        <li>Alta clareza visual para rápida aprovação da diretoria e engenharia</li>
+      </ul>
+    </div>
+    <img class="proposal-art" src="../static/modelo-proposta-helpvolt.jpg" alt="Gêmeo digital e proposta visual fotorrealista para painel elétrico industrial" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<!-- CONTATO COM FORMULÁRIO (INTEGRADO COM WEB3FORMS) E MAPA -->
 <section id="contato">
   <div class="wrap">
-    <h2>Contato</h2>
+    <h2>Entre em Contato</h2>
+    
     <div class="contact-grid">
       <div class="contact-item">
-        <span class="label">WhatsApp</span>
-        <a class="value" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20encontrei%20a%20HelpVolt%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" rel="noopener">(15) 99735-7972</a>
+        <span class="label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Sede e Polo Regional
+        </span>
+        <span class="value" style="font-size: 1.15rem; font-weight: 500;">Sorocaba, SP <br><small style="font-size: 0.85rem; color: var(--muted); font-weight: 400;">Atendimento in loco em toda a região</small></span>
       </div>
+      
       <div class="contact-item">
-        <span class="label">E-mail</span>
-        <a class="value email" href="mailto:helpvolt@gmail.com">helpvolt@gmail.com</a>
+        <span class="label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          WhatsApp Comercial & Plantão
+        </span>
+        <a class="value" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20estou%20no%20site%20da%20HelpVolt%20e%20gostaria%20de%20solicitar%20suporte%20t%C3%A9cnico." target="_blank" rel="noopener">(15) 99735-7972</a>
       </div>
+      
       <div class="contact-item">
-        <span class="label">Área de atendimento</span>
-        <span class="value" style="font-weight:500;">Sorocaba e região</span>
+        <span class="label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          E-mail Corporativo
+        </span>
+        <a class="value" style="font-size: 1.1rem;" href="mailto:helpvolt@gmail.com">helpvolt@gmail.com</a>
       </div>
     </div>
-    <div class="contact-actions">
-      <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20encontrei%20a%20HelpVolt%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
-      <a class="btn btn-outline" href="mailto:helpvolt@gmail.com">Enviar e-mail</a>
+
+    <!-- Layout Dividido: Formulário + Mapa -->
+    <div class="contact-layout">
+      <!-- Formulário com envio elegante e mensagem personalizada -->
+<form class="contact-form" id="contactForm">
+  <input type="hidden" name="access_key" value="286b8e54-7280-4107-8462-27a9826078b0">
+  <input type="hidden" name="subject" value="Nova Demanda Técnica - Site HelpVolt">
+  <input type="hidden" name="from_name" value="Site HelpVolt">
+  <input type="checkbox" name="botcheck" style="display: none;">
+
+  <!-- Bloco com os campos normais -->
+  <div id="form-fields">
+    <h3>Envie sua Demanda Técnica</h3>
+    <p>Preencha os dados abaixo para receber uma avaliação técnica ou orçamento.</p>
+    <div class="form-grid">
+      <label>Nome / Empresa *<input name="name" autocomplete="name" maxlength="120" placeholder="Ex: Roberto - Linha de Usinagem" required></label>
+      <label>Telefone / WhatsApp *<input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="(15) 99999-9999" required></label>
+      <label style="grid-column: 1 / -1;">E-mail Corporativo *<input name="email" type="email" autocomplete="email" maxlength="254" placeholder="contato@suaempresa.com.br" required></label>
+      <label class="form-message">Escopo do Serviço ou Sintoma da Máquina *<textarea name="message" maxlength="3000" placeholder="Descreva brevemente a máquina, sintoma, necessidade de painel ou adequação..." required></textarea></label>
+    </div>
+    <button class="btn btn-primary" id="btn-submit" type="submit">Enviar Demanda Técnica</button>
+  </div>
+
+  <!-- Mensagem de Sucesso (Fica oculta e aparece assim que enviar) -->
+  <div id="form-success" style="display: none; padding: 20px 10px; text-align: center;">
+    <div style="font-size: 2.8rem; margin-bottom: 10px;">✅</div>
+    <h3 style="color: #ffd285; margin: 0 0 10px; font-size: 1.4rem;">Demanda Recebida com Sucesso!</h3>
+    <p style="color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; line-height: 1.5;">
+      Recebemos os dados da sua solicitação. O técnico responsável analisará o escopo e retornará o contato em breve pelo telefone/WhatsApp informado.
+    </p>
+    <div style="background: rgba(255,255,255,0.06); border: 1px solid var(--line); padding: 14px; border-radius: 4px; margin-bottom: 22px; text-align: left; font-size: 0.88rem;">
+      🚨 <strong>Precisa de atendimento urgente por parada de linha?</strong><br>
+      <span style="color: var(--muted);">Não aguarde o retorno por e-mail: fale agora mesmo com o nosso plantão no WhatsApp.</span>
+    </div>
+    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+      <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%20Daniel,%20acabei%20de%20enviar%20um%20formul%C3%A1rio%20e%20preciso%20de%20atendimento%20imediato." target="_blank" rel="noopener">Chamar no Plantão</a>
+      <button type="button" class="btn btn-outline" onclick="resetarFormulario()">Enviar nova mensagem</button>
+    </div>
+  </div>
+</form>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const formFields = document.getElementById('form-fields');
+  const formSuccess = document.getElementById('form-success');
+  const btnSubmit = document.getElementById('btn-submit');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Altera o texto do botão para indicar carregamento
+    btnSubmit.disabled = true;
+    btnSubmit.innerText = "Enviando demanda...";
+
+    const formData = new FormData(form);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status === 200) {
+        // Esconde os campos e exibe a mensagem de sucesso
+        formFields.style.display = 'none';
+        formSuccess.style.display = 'block';
+        form.reset();
+      } else {
+        alert("Ocorreu um erro ao enviar: " + (json.message || "Tente novamente."));
+      }
+    })
+    .catch(error => {
+      alert("Falha de conexão ao enviar o formulário. Por favor, tente pelo WhatsApp.");
+    })
+    .finally(() => {
+      btnSubmit.disabled = false;
+      btnSubmit.innerText = "Enviar Demanda Técnica";
+    });
+  });
+
+  function resetarFormulario() {
+    formSuccess.style.display = 'none';
+    formFields.style.display = 'block';
+  }
+</script>
+
+      <!-- Mapa do Google -->
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117186.20853488806!2d-47.538565538161556!3d-23.473522770281144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f498c1d530df%3A0xc6ffc950a41d9a69!2sSorocaba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da região de atendimento em Sorocaba e polo industrial"></iframe>
+      </div>
+    </div>
+
+    <!-- SEO Local: Cidades Atendidas -->
+    <div class="region-strip">
+      <strong>Polo Industrial Atendido:</strong> Base operacional em Sorocaba/SP e deslocamento técnico para plantas em<em>: Itu, Salto, Indaiatuba, Cabreúva, Porto Feliz, Boituva, Cerquilho, Tietê, Tatuí, Iperó, Capela do Alto, Araçoiaba da Serra, Salto de Pirapora, Votorantim, Piedade, Alumínio, Mairinque e São Roque</em>.
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>© 2026 HelpVolt. Serviços de manutenção elétrica industrial com Daniel, técnico eletrotécnico, em Sorocaba, SP.</p>
-    <p class="footer-details"><span>Agendamento: segunda a sexta, 08h00 às 19h00</span><span>Atendimento de emergência: 24 horas</span><span>CNPJ: 33.828.327/0001-05</span></p>
+    <div class="footer-logo-wrap">
+      <img src="../static/logo-symbol.png" alt="" aria-hidden="true">
+      <span style="color: var(--muted); font-weight: 600; font-size: 1.05rem;">HelpVolt</span>
+    </div>
+    
+    <p>© 2026 HelpVolt. Soluções em Elétrica e Automação Industrial.</p>
+    <p class="footer-details">
+      <span>Agendamento: Segunda a Sexta, 08h00 às 19h00</span>
+      <span>Plantão Emergencial 24h</span>
+      <span>CNPJ: 33.828.327/0001-05</span>
+    </p>
   </div>
 </footer>
 
-<a class="floating-whatsapp" href="https://wa.me/5515997357972?text=Ol%C3%A1%2C%20encontrei%20a%20HelpVolt%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20atendimento." target="_blank" rel="noopener" aria-label="Chamar a HelpVolt no WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.7 11.7 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.8-8.4ZM12.3 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.6 9.6 0 0 1-1.5-5.1c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.8 6.9c0 5.4-4.4 9.9-9.8 9.9h.4Zm5.4-7.4c-.3-.1-1.7-.8-2-1s-.5-.1-.7.2-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 8.7 8.7 0 0 1-1.7-2.1c-.2-.3 0-.4.1-.5l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5c-.1-.1-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 .1.3.2.5c1.8 2.8 4.1 3.9 5.5 4.4.6.2 1 .4 1.4.5.6.2 1.2.1 1.6.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.2-.2-.5-.3Z"/></svg><span>WhatsApp</span>
+<!-- BOTÃO FLUTUANTE DE WHATSAPP / PLANTÃO -->
+<a class="floating-whatsapp" href="https://wa.me/5515997357972?text=Ol%C3%A1%20Daniel,%20estou%20no%20site%20da%20HelpVolt%20e%20gostaria%20de%20solicitar%20atendimento." target="_blank" rel="noopener" aria-label="Fale com a HelpVolt no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.7 11.7 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.8-8.4ZM12.3 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.6 9.6 0 0 1-1.5-5.1c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.8 6.9c0 5.4-4.4 9.9-9.8 9.9h.4Zm5.4-7.4c-.3-.1-1.7-.8-2-1s-.5-.1-.7.2-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 8.7 8.7 0 0 1-1.7-2.1c-.2-.3 0-.4.1-.5l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5c-.1-.1-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 .1.3.2.5c1.8 2.8 4.1 3.9 5.5 4.4.6.2 1 .4 1.4.5.6.2 1.2.1 1.6.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.2-.2-.5-.3Z"/></svg>
+  <span>Plantão Técnico</span>
 </a>
 
+<script defer src="../static/contact-events.js"></script>
 </body>
 </html>
