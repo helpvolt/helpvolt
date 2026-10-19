@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://www.helpvolt.com.br/">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="../static/logo-symbol.png">
+<link rel="icon" type="image/png" href="static/logo-symbol.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,11 +54,7 @@
   h1, h2, h3, .brand, nav a, .btn { font-family: 'Inter', sans-serif; }
   a { color: inherit; }
 
-  .wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
   /* BARRA DE ALERTA / PLANTÃO */
   .emergency-topbar {
@@ -70,11 +66,7 @@
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.15);
   }
-  .emergency-topbar a {
-    color: #ffd285;
-    text-decoration: underline;
-    margin-left: 6px;
-  }
+  .emergency-topbar a { color: #ffd285; text-decoration: underline; margin-left: 6px; }
   .emergency-topbar a:hover { color: #fff; }
 
   header.site {
@@ -92,12 +84,7 @@
     padding-top: 14px;
     padding-bottom: 14px;
   }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .brand-symbol { width: 44px; height: 44px; flex-shrink: 0; }
   .brand-name {
     display: flex;
@@ -106,16 +93,9 @@
     font-size: 1.25rem;
     line-height: 1.1;
   }
-  .brand-tag {
-    font-weight: 400;
-    font-size: 0.72rem;
-    color: var(--muted);
-  }
-  nav.links {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
+  .brand-tag { font-weight: 400; font-size: 0.72rem; color: var(--muted); }
+  
+  nav.links { display: flex; align-items: center; gap: 24px; }
   nav.links a.section-link {
     font-size: 0.95rem;
     font-weight: 500;
@@ -123,8 +103,7 @@
     text-decoration: none;
     border-bottom: 1px solid transparent;
   }
-  nav.links a.section-link:hover,
-  nav.links a.section-link:focus-visible {
+  nav.links a.section-link:hover, nav.links a.section-link:focus-visible {
     color: var(--text);
     border-bottom-color: var(--amber);
   }
@@ -151,25 +130,12 @@
     border-color: var(--line-strong);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 10px 100%, 0 calc(100% - 10px));
   }
-  .btn-outline:hover, .btn-outline:focus-visible {
-    border-color: var(--amber);
-    color: var(--amber);
-  }
+  .btn-outline:hover, .btn-outline:focus-visible { border-color: var(--amber); color: var(--amber); }
 
-  .hero {
-    position: relative;
-    overflow: hidden;
-    padding: 72px 0 68px;
-    border-bottom: 1px solid var(--line);
-  }
+  .hero { position: relative; overflow: hidden; padding: 72px 0 68px; border-bottom: 1px solid var(--line); }
   .hero-trace { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .hero .wrap { position: relative; z-index: 1; }
-  .hero-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(230px, 460px);
-    gap: 48px;
-    align-items: center;
-  }
+  .hero-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 460px); gap: 48px; align-items: center; }
   .hero-photo { 
     width: 100%; 
     height: 380px; 
@@ -238,11 +204,11 @@
   .proposal-art { width: 100%; display: block; border: 1px solid #ccdbe5; box-shadow: 12px 14px 0 rgba(6,45,87,0.12); }
 
   /* CONTATO */
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-top: 8px; }
-  .contact-item { display: flex; flex-direction: column; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 8px; }
+  .contact-item { display: flex; flex-direction: column; background: rgba(255,255,255,0.02); padding: 16px; border: 1px solid var(--line); }
   .contact-item .label { display: flex; align-items: center; font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; }
-  .contact-item .label svg { margin-right: 6px; color: var(--amber); }
-  .contact-item .value { font-size: 1.22rem; font-weight: 600; text-decoration: none; }
+  .contact-item .label svg { margin-right: 6px; color: var(--amber); flex-shrink: 0; }
+  .contact-item .value { font-size: 1.15rem; font-weight: 600; text-decoration: none; }
   .contact-item a.value:hover { color: var(--amber); }
   
   /* LAYOUT DO FORMULÁRIO E MAPA */
@@ -273,8 +239,20 @@
 
   /* FOOTER & FLOATING */
   footer { border-top: 1px solid var(--line); padding: 36px 0; }
-  .footer-logo-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-  .footer-logo-wrap img { opacity: 0.4; filter: grayscale(100%); width: 26px; height: 26px; }
+  .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+  .footer-logo-wrap { display: flex; align-items: center; gap: 10px; }
+  .footer-logo-wrap img { width: 26px; height: 26px; }
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .footer-social-link:hover { color: var(--amber); }
+  .footer-social-link svg { width: 18px; height: 18px; fill: currentColor; }
   footer p { color: var(--muted); font-size: 0.88rem; margin: 0; }
   .footer-details { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 8px; }
   .service-kicker { color: var(--amber); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; display: block; }
@@ -297,10 +275,7 @@
     box-shadow: 0 8px 24px rgba(0,0,0,0.36); 
     transition: transform 0.2s, background 0.2s;
   }
-  .floating-whatsapp:hover { 
-    background: #168640; 
-    transform: translateY(-2px);
-  }
+  .floating-whatsapp:hover { background: #168640; transform: translateY(-2px); }
   .floating-whatsapp svg { width: 20px; height: 20px; fill: currentColor; }
 
   @media (max-width: 960px) {
@@ -369,7 +344,7 @@
       </div>
     </div>
     
-    <img class="hero-photo" src="../static/painel-industrial-ilustrativo.png" alt="Técnico realizando manutenção em painel elétrico industrial" fetchpriority="high" decoding="async">
+    <img class="hero-photo" src="static/painel-industrial-ilustrativo.png" alt="Técnico realizando manutenção em painel elétrico industrial" fetchpriority="high" decoding="async">
   </div>
 </section>
 
@@ -433,7 +408,7 @@
 <section class="about">
   <div class="wrap">
     <div class="about-grid">
-      <img class="about-panel-photo" src="../static/painel-industrial-ilustrativo.png" alt="Painel elétrico industrial organizado" loading="lazy" decoding="async">
+      <img class="about-panel-photo" src="static/painel-industrial-ilustrativo.png" alt="Painel elétrico industrial organizado" loading="lazy" decoding="async">
       <div>
         <h2>A HelpVolt</h2>
         <p>Com sólida base operacional e foco na resolução ágil de problemas, a HelpVolt atua como o parceiro técnico em elétrica e automação para indústrias que exigem alto nível de confiabilidade e resposta rápida.</p>
@@ -461,11 +436,11 @@
         <li>Alta clareza visual para rápida aprovação da diretoria e engenharia</li>
       </ul>
     </div>
-    <img class="proposal-art" src="../static/modelo-proposta-helpvolt.jpg" alt="Gêmeo digital e proposta visual fotorrealista para painel elétrico industrial" loading="lazy" decoding="async">
+    <img class="proposal-art" src="static/modelo-proposta-helpvolt.jpg" alt="Gêmeo digital e proposta visual fotorrealista para painel elétrico industrial" loading="lazy" decoding="async">
   </div>
 </section>
 
-<!-- CONTATO COM FORMULÁRIO (INTEGRADO COM WEB3FORMS) E MAPA -->
+<!-- CONTATO (COM WHATSAPP, EMAIL, INSTAGRAM E FORMULÁRIO) -->
 <section id="contato">
   <div class="wrap">
     <h2>Entre em Contato</h2>
@@ -479,7 +454,7 @@
           </svg>
           Sede e Polo Regional
         </span>
-        <span class="value" style="font-size: 1.15rem; font-weight: 500;">Sorocaba, SP <br><small style="font-size: 0.85rem; color: var(--muted); font-weight: 400;">Atendimento in loco em toda a região</small></span>
+        <span class="value" style="font-size: 1.05rem; font-weight: 500;">Sorocaba, SP <br><small style="font-size: 0.82rem; color: var(--muted);">Atendimento regional in loco</small></span>
       </div>
       
       <div class="contact-item">
@@ -500,49 +475,102 @@
           </svg>
           E-mail Corporativo
         </span>
-        <a class="value" style="font-size: 1.1rem;" href="mailto:helpvolt@gmail.com">helpvolt@gmail.com</a>
+        <a class="value" style="font-size: 1.05rem;" href="mailto:helpvolt@gmail.com">helpvolt@gmail.com</a>
+      </div>
+
+      <!-- INSTAGRAM OFICIAL -->
+      <div class="contact-item">
+        <span class="label">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          Instagram Oficial
+        </span>
+        <a class="value" style="font-size: 1.05rem;" href="https://www.instagram.com/help.volt/" target="_blank" rel="noopener">@help.volt</a>
       </div>
     </div>
 
     <!-- Layout Dividido: Formulário + Mapa -->
     <div class="contact-layout">
-      <!-- Formulário com envio elegante e mensagem personalizada -->
-<form class="contact-form" id="contactForm">
-  <input type="hidden" name="access_key" value="286b8e54-7280-4107-8462-27a9826078b0">
-  <input type="hidden" name="subject" value="Nova Demanda Técnica - Site HelpVolt">
-  <input type="hidden" name="from_name" value="Site HelpVolt">
-  <input type="checkbox" name="botcheck" style="display: none;">
+      <!-- Formulário com AJAX para Web3Forms -->
+      <form class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="286b8e54-7280-4107-8462-27a9826078b0">
+        <input type="hidden" name="subject" value="Nova Demanda Técnica - Site HelpVolt">
+        <input type="hidden" name="from_name" value="Site HelpVolt">
+        <input type="checkbox" name="botcheck" style="display: none;">
 
-  <!-- Bloco com os campos normais -->
-  <div id="form-fields">
-    <h3>Envie sua Demanda Técnica</h3>
-    <p>Preencha os dados abaixo para receber uma avaliação técnica ou orçamento.</p>
-    <div class="form-grid">
-      <label>Nome / Empresa *<input name="name" autocomplete="name" maxlength="120" placeholder="Ex: Roberto - Linha de Usinagem" required></label>
-      <label>Telefone / WhatsApp *<input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="(15) 99999-9999" required></label>
-      <label style="grid-column: 1 / -1;">E-mail Corporativo *<input name="email" type="email" autocomplete="email" maxlength="254" placeholder="contato@suaempresa.com.br" required></label>
-      <label class="form-message">Escopo do Serviço ou Sintoma da Máquina *<textarea name="message" maxlength="3000" placeholder="Descreva brevemente a máquina, sintoma, necessidade de painel ou adequação..." required></textarea></label>
+        <div id="form-fields">
+          <h3>Envie sua Demanda Técnica</h3>
+          <p>Preencha os dados abaixo para receber uma avaliação técnica ou orçamento.</p>
+          <div class="form-grid">
+            <label>Nome / Empresa *<input name="name" autocomplete="name" maxlength="120" placeholder="Ex: Roberto - Linha de Usinagem" required></label>
+            <label>Telefone / WhatsApp *<input name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="(15) 99999-9999" required></label>
+            <label style="grid-column: 1 / -1;">E-mail Corporativo *<input name="email" type="email" autocomplete="email" maxlength="254" placeholder="contato@suaempresa.com.br" required></label>
+            <label class="form-message">Escopo do Serviço ou Sintoma da Máquina *<textarea name="message" maxlength="3000" placeholder="Descreva brevemente a máquina, sintoma, necessidade de painel ou adequação..." required></textarea></label>
+          </div>
+          <button class="btn btn-primary" id="btn-submit" type="submit">Enviar Demanda Técnica</button>
+        </div>
+
+        <!-- Mensagem de Sucesso Integrada -->
+        <div id="form-success" style="display: none; padding: 20px 10px; text-align: center;">
+          <div style="font-size: 2.8rem; margin-bottom: 10px;">✅</div>
+          <h3 style="color: #ffd285; margin: 0 0 10px; font-size: 1.4rem;">Demanda Recebida com Sucesso!</h3>
+          <p style="color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; line-height: 1.5;">
+            Recebemos sua solicitação. O responsável técnico avaliará as informações e retornará o contato o mais breve possível.
+          </p>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid var(--line); padding: 14px; border-radius: 4px; margin-bottom: 22px; text-align: left; font-size: 0.88rem;">
+            🚨 <strong>Precisa de atendimento urgente por parada de linha?</strong><br>
+            <span style="color: var(--muted);">Não aguarde o retorno por e-mail: acione agora o nosso plantão no WhatsApp.</span>
+          </div>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%20Daniel,%20acabei%20de%20enviar%20um%20formul%C3%A1rio%20e%20preciso%20de%20atendimento%20imediato." target="_blank" rel="noopener">Chamar no Plantão</a>
+            <button type="button" class="btn btn-outline" onclick="resetarFormulario()">Enviar nova mensagem</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Mapa do Google -->
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117186.20853488806!2d-47.538565538161556!3d-23.473522770281144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f498c1d530df%3A0xc6ffc950a41d9a69!2sSorocaba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da região de atendimento em Sorocaba e polo industrial"></iframe>
+      </div>
     </div>
-    <button class="btn btn-primary" id="btn-submit" type="submit">Enviar Demanda Técnica</button>
-  </div>
 
-  <!-- Mensagem de Sucesso (Fica oculta e aparece assim que enviar) -->
-  <div id="form-success" style="display: none; padding: 20px 10px; text-align: center;">
-    <div style="font-size: 2.8rem; margin-bottom: 10px;">✅</div>
-    <h3 style="color: #ffd285; margin: 0 0 10px; font-size: 1.4rem;">Demanda Recebida com Sucesso!</h3>
-    <p style="color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; line-height: 1.5;">
-      Recebemos os dados da sua solicitação. O técnico responsável analisará o escopo e retornará o contato em breve pelo telefone/WhatsApp informado.
+    <!-- SEO Local: Cidades Atendidas -->
+    <div class="region-strip">
+      <strong>Polo Industrial Atendido:</strong> Base operacional em Sorocaba/SP e deslocamento técnico para plantas em <em>Votorantim, Itu, Salto, Porto Feliz, Iperó, Araçoiaba da Serra, Indaiatuba e Boituva</em>.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo-wrap">
+        <img src="static/logo-symbol.png" alt="" aria-hidden="true">
+        <span style="color: var(--muted); font-weight: 600; font-size: 1.05rem;">HelpVolt</span>
+      </div>
+      <a class="footer-social-link" href="https://www.instagram.com/help.volt/" target="_blank" rel="noopener" aria-label="Siga a HelpVolt no Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <span>@help.volt</span>
+      </a>
+    </div>
+    
+    <p>© 2026 HelpVolt. Soluções em Elétrica e Automação Industrial.</p>
+    <p class="footer-details">
+      <span>Agendamento: Segunda a Sexta, 08h00 às 19h00</span>
+      <span>Plantão Emergencial 24h</span>
+      <span>CNPJ: 33.828.327/0001-05</span>
     </p>
-    <div style="background: rgba(255,255,255,0.06); border: 1px solid var(--line); padding: 14px; border-radius: 4px; margin-bottom: 22px; text-align: left; font-size: 0.88rem;">
-      🚨 <strong>Precisa de atendimento urgente por parada de linha?</strong><br>
-      <span style="color: var(--muted);">Não aguarde o retorno por e-mail: fale agora mesmo com o nosso plantão no WhatsApp.</span>
-    </div>
-    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-      <a class="btn btn-primary" href="https://wa.me/5515997357972?text=Ol%C3%A1%20Daniel,%20acabei%20de%20enviar%20um%20formul%C3%A1rio%20e%20preciso%20de%20atendimento%20imediato." target="_blank" rel="noopener">Chamar no Plantão</a>
-      <button type="button" class="btn btn-outline" onclick="resetarFormulario()">Enviar nova mensagem</button>
-    </div>
   </div>
-</form>
+</footer>
+
+<!-- BOTÃO FLUTUANTE DE WHATSAPP / PLANTÃO -->
+<a class="floating-whatsapp" href="https://wa.me/5515997357972?text=Ol%C3%A1%20Daniel,%20estou%20no%20site%20da%20HelpVolt%20e%20gostaria%20de%20solicitar%20atendimento." target="_blank" rel="noopener" aria-label="Fale com a HelpVolt no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.7 11.7 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.8-8.4ZM12.3 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.6 9.6 0 0 1-1.5-5.1c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.8 6.9c0 5.4-4.4 9.9-9.8 9.9h.4Zm5.4-7.4c-.3-.1-1.7-.8-2-1s-.5-.1-.7.2-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 8.7 8.7 0 0 1-1.7-2.1c-.2-.3 0-.4.1-.5l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5c-.1-.1-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 .1.3.2.5c1.8 2.8 4.1 3.9 5.5 4.4.6.2 1 .4 1.4.5.6.2 1.2.1 1.6.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.2-.2-.5-.3Z"/></svg>
+  <span>Plantão Técnico</span>
+</a>
 
 <script>
   const form = document.getElementById('contactForm');
@@ -552,8 +580,6 @@
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Altera o texto do botão para indicar carregamento
     btnSubmit.disabled = true;
     btnSubmit.innerText = "Enviando demanda...";
 
@@ -566,7 +592,6 @@
     .then(async (response) => {
       let json = await response.json();
       if (response.status === 200) {
-        // Esconde os campos e exibe a mensagem de sucesso
         formFields.style.display = 'none';
         formSuccess.style.display = 'block';
         form.reset();
@@ -588,42 +613,6 @@
     formFields.style.display = 'block';
   }
 </script>
-
-      <!-- Mapa do Google -->
-      <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117186.20853488806!2d-47.538565538161556!3d-23.473522770281144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5f498c1d530df%3A0xc6ffc950a41d9a69!2sSorocaba%2C%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da região de atendimento em Sorocaba e polo industrial"></iframe>
-      </div>
-    </div>
-
-    <!-- SEO Local: Cidades Atendidas -->
-    <div class="region-strip">
-      <strong>Polo Industrial Atendido:</strong> Base operacional em Sorocaba/SP e deslocamento técnico para plantas em<em>: Itu, Salto, Indaiatuba, Cabreúva, Porto Feliz, Boituva, Cerquilho, Tietê, Tatuí, Iperó, Capela do Alto, Araçoiaba da Serra, Salto de Pirapora, Votorantim, Piedade, Alumínio, Mairinque e São Roque</em>.
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-logo-wrap">
-      <img src="../static/logo-symbol.png" alt="" aria-hidden="true">
-      <span style="color: var(--muted); font-weight: 600; font-size: 1.05rem;">HelpVolt</span>
-    </div>
-    
-    <p>© 2026 HelpVolt. Soluções em Elétrica e Automação Industrial.</p>
-    <p class="footer-details">
-      <span>Agendamento: Segunda a Sexta, 08h00 às 19h00</span>
-      <span>Plantão Emergencial 24h</span>
-      <span>CNPJ: 33.828.327/0001-05</span>
-    </p>
-  </div>
-</footer>
-
-<!-- BOTÃO FLUTUANTE DE WHATSAPP / PLANTÃO -->
-<a class="floating-whatsapp" href="https://wa.me/5515997357972?text=Ol%C3%A1%20Daniel,%20estou%20no%20site%20da%20HelpVolt%20e%20gostaria%20de%20solicitar%20atendimento." target="_blank" rel="noopener" aria-label="Fale com a HelpVolt no WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.7 11.7 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.8-8.4ZM12.3 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.6 9.6 0 0 1-1.5-5.1c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.8 6.9c0 5.4-4.4 9.9-9.8 9.9h.4Zm5.4-7.4c-.3-.1-1.7-.8-2-1s-.5-.1-.7.2-.8 1-.9 1.2-.3.2-.6.1a8 8 0 0 1-2.4-1.5 8.7 8.7 0 0 1-1.7-2.1c-.2-.3 0-.4.1-.5l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.5c-.1-.1-.7-1.7-.9-2.3s-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 .1.3.2.5c1.8 2.8 4.1 3.9 5.5 4.4.6.2 1 .4 1.4.5.6.2 1.2.1 1.6.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.2-.2-.5-.3Z"/></svg>
-  <span>Plantão Técnico</span>
-</a>
-
-<script defer src="../static/contact-events.js"></script>
+<script defer src="static/contact-events.js"></script>
 </body>
 </html>
